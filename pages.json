@@ -1,0 +1,75 @@
+{
+	"easycom": {
+		"^u-(.*)": "@/uni_modules/uview-ui/components/u-$1/u-$1.vue"
+	},
+	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+		{
+			"path": "pages/index/index",
+			"style": {
+				"navigationBarTitleText": "首页"
+			}
+		},
+		{
+			"path": "pages/me/index",
+			"style": {
+				"navigationBarTitleText": "我的"
+			}
+		}
+	],
+	"subPackages": [
+		{
+			"root": "pageSub",
+			"pages": [
+				{
+					"path": "login/login",
+					"style": {
+						"navigationBarTitleText": "授权登录"
+					}
+				}
+			]
+		},
+		{
+			"root": "pageCustomer",
+			"pages": [
+				{
+					"path": "home/index",
+					"style": {
+						"navigationBarTitleText": "首页"
+					}
+				},
+				{
+					"path": "me/index",
+					"style": {
+						"navigationStyle": "custom",
+						"navigationBarTitleText": "我的",
+						"enablePullDownRefresh": true
+					}
+				}
+			]
+		}
+	],
+	"tabBar": {
+		"custom": true,
+		"list": [
+			{
+				"pagePath": "pages/index/index",
+				"text": "首页"
+			},
+			{
+				"pagePath": "pages/me/index",
+				"text": "我的"
+			}
+		]
+	},
+	"globalStyle": {
+		"navigationBarTextStyle": "black",
+		"navigationBarTitleText": "RESEWRVE",
+		"navigationBarBackgroundColor": "#FFFFFF",
+		"navigationStyle": "default",
+		"backgroundColor": "#F0F2FA",
+		"rpxCalcMaxDeviceWidth": 1024,
+		"rpxCalcBaseDeviceWidth": 750,
+		"rpxCalcIncludeWidth": 750
+	},
+	"uniIdRouter": {}
+}

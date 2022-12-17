@@ -1,0 +1,1 @@
+<view class="ww" style="{{(styleNavigationBarHeight)}}"><u-navbar vue-id="4c6a13b2-1" title="个人中心" bind:__l="__l"></u-navbar>789<block wx:for="{{13}}" wx:for-item="v" wx:for-index="i"><view class="item">{{''+v+''}}</view></block></view>

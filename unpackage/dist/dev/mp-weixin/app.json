@@ -1,0 +1,45 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/me/index"
+  ],
+  "subPackages": [
+    {
+      "root": "pageSub",
+      "pages": [
+        "login/login"
+      ]
+    },
+    {
+      "root": "pageCustomer",
+      "pages": [
+        "home/index",
+        "me/index"
+      ]
+    }
+  ],
+  "window": {
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "RESEWRVE",
+    "navigationBarBackgroundColor": "#FFFFFF",
+    "navigationStyle": "default",
+    "backgroundColor": "#F0F2FA",
+    "rpxCalcMaxDeviceWidth": 1024,
+    "rpxCalcBaseDeviceWidth": 750,
+    "rpxCalcIncludeWidth": 750
+  },
+  "tabBar": {
+    "custom": true,
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/me/index",
+        "text": "我的"
+      }
+    ]
+  },
+  "usingComponents": {}
+}
