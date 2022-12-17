@@ -75,7 +75,7 @@
 <body>
     <div class="main">
         <div class="left">
-            <button id="btn">bulid</button>
+            <!-- <button id="btn">bulid</button> -->
             <button id="btn_stop">reload</button>
             <div class="heartbeat">
                 <p>WS心跳</p>
@@ -114,10 +114,10 @@
     }
 
     $('#btn').on('click', function () {
-        if (!flg) {
-            alert('请刷新页面！')
-            return
-        }
+        // if (!flg) {
+        //     alert('请刷新页面！')
+        //     return
+        // }
         socket.send('/up')
     })
     $('#btn_stop').on('click', function () {

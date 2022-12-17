@@ -19,16 +19,12 @@ app.ws('/wes', function (ws, req) {
     ws.send('连接成功了')
     ws.on('message', function (msg) {
         // 业务代码
-        if (msg == '/up') {
-            up(ws)
+        if (msg == '/reload') {
+            reload(ws)
         }
     })
-    setInterval(() => {
-        ws.send(`heartbeat|${Date.now()}`)
-    }, 1000)
 })
-const up = (ws) => {
-
+const reload = (ws) => {
     let flg = fs.existsSync(config.github.fileName)
     // 文件夹不存在
     if (!flg) {

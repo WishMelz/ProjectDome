@@ -11,8 +11,7 @@ module.exports = {
     shell: {
         gitUpdate: "git pull",  // git 拉取代码
         npmDow: "npm install",   // 下载依赖包
-        build: "npm run build",  // 打包指令
-        mv: "/home/wwwroot/default" // 移动文件夹
+        build: "pm2 start ",  // 打包指令
     },
     reload: {
         shell: "pm2 reload 0"
