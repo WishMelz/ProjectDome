@@ -1,0 +1,78 @@
+{
+  "name": "vue2tsx",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "build:prod": "vue-cli-service build --mode production",
+    "build:dev": "vue-cli-service build --mode development",
+    "build:test": "vue-cli-service build --mode test",
+    "lint": "vue-cli-service lint"
+  },
+  "dependencies": {
+    "babel-plugin-import": "^1.13.5",
+    "core-js": "^3.6.5",
+    "css-loader": "^3.5.3",
+    "echarts": "^5.0.2",
+    "decimal.js": "^10.3.1",
+    "element-ui": "2.15.7",
+    "es6-promise": "^4.2.8",
+    "postcss-loader": "^3.0.0",
+    "vue": "^2.6.11",
+    "vue-class-component": "^7.2.3",
+    "vue-property-decorator": "^9.1.2",
+    "vue-router": "^3.2.0",
+    "vuex": "^3.4.0",
+    "vuex-class": "^0.3.2"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.4.0",
+    "@typescript-eslint/parser": "^5.4.0",
+    "@vue/cli-plugin-babel": "~5.0.0",
+    "@vue/cli-plugin-eslint": "~5.0.0",
+    "@vue/cli-plugin-router": "~5.0.0",
+    "@vue/cli-plugin-typescript": "~5.0.0",
+    "@vue/cli-plugin-vuex": "~5.0.0",
+    "@vue/cli-service": "~5.0.0",
+    "@vue/eslint-config-typescript": "^9.1.0",
+    "axios": "^0.21.1",
+    "babel-eslint": "^10.1.0",
+    "eslint": "^6.7.2",
+    "eslint-plugin-vue": "^6.2.2",
+    "js-base64": "^3.6.0",
+    "less": "^4.1.1",
+    "less-loader": "^5.0.0",
+    "postcss": "^8.4.20",
+    "quill": "^1.3.7",
+    "style-resources-loader": "^1.3.2",
+    "typescript": "^4.2.3",
+    "vue-cli-plugin-style-resources-loader": "~0.1.4",
+    "vue-router": "^3.5.1",
+    "vue-template-compiler": "^2.6.11",
+    "vue-tsx-support": "^3.1.0"
+  },
+  "eslintConfig": {
+    "root": true,
+    "env": {
+      "node": true
+    },
+    "extends": [
+      "plugin:vue/essential",
+      "eslint:recommended",
+      "@vue/typescript"
+    ],
+    "parserOptions": {
+      "parser": "@typescript-eslint/parser"
+    },
+    "rules": {
+      "import/no-unresolved": 0,
+      "no-unused-vars": "off"
+    }
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead"
+  ]
+}

@@ -1,0 +1,119 @@
+.flex-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.flex-between {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.flex-center-start {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+.flex-top-start {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+.flex-center-end {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+.flex-start-between {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+.flex-start-center {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+}
+.flex-center-column {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+.flex-start-column {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+.flex-1{
+    flex:1
+}
+.mb20 {
+    margin-bottom: 20px !important;
+}
+.mt20 {
+    margin-top: 20px !important;
+}
+.ml20 {
+    margin-left: 20px !important;
+}
+.mb16 {
+    margin-bottom: 16px !important;
+}
+.red {
+    color: #cd3333;
+}
+.green {
+    color: #3cb371;
+}
+.relative {
+    position: relative;
+}
+.absulote-center-right{//定位右垂直居中
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+}
+
+.absulote-center-left{//定位左垂直居中
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translate(-50%);
+}
+
+
+.h3 {
+    // 带下划线
+    height: 34px;
+    line-height: 22px;
+    font-size: 14px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid #f1f1f1;
+    color: #666;
+    font-weight: 700;
+}
+
+.h5 {
+    margin: 24px 0 24px 6px;
+    padding-left: 6px;
+    height: 22px;
+    line-height: 22px;
+    font-size: 14px;
+    position: relative;
+    display: block;
+
+    &::before {
+        content: '';
+        display: block;
+        width: 2px;
+        height: 12px;
+        background: #2787fe;
+        position: absolute;
+        top: 50%;
+        left: 0;
+        transform: translateY(-50%);
+    }
+}
