@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        color: #202124;
+    }
+
+    li {
+        white-space: pre-line;
+        /* border-top: 1px solid #f0f0f0; */
+        border-bottom: 1px solid #f0f0f0;
+        font-size: 12px;
+        color: #202124;
+        padding: 5px 0;
+        padding-left: 15px
+    }
+
+    .main {
+        display: flex;
+        padding-top: 20px;
+        box-sizing: border-box;
+    }
+
+    .main .right {
+        flex: 1;
+        height: 80vh;
+        overflow-y: auto
+    }
+
+    .main .left {
+        width: 200px;
+        text-align: center;
+
+    }
+
+    .main .left button {
+        display: inline-block;
+        line-height: 1;
+        white-space: nowrap;
+        cursor: pointer;
+        background: #fff;
+        border: 1px solid #dcdfe6;
+        color: #606266;
+        -webkit-appearance: none;
+        text-align: center;
+        box-sizing: border-box;
+        outline: none;
+        margin: 0;
+        transition: .1s;
+        font-weight: 500;
+        -moz-user-select: none;
+        -webkit-user-select: none;
+        -ms-user-select: none;
+        padding: 12px 20px;
+        font-size: 14px;
+        border-radius: 4px;
+        margin-bottom: 20px
+    }
+
+    .heartbeat {
+        font-size: 16px
+    }
+
+</style>
+
+<body>
+    <div class="main">
+        <div class="left">
+            <button id="btn">bulid</button>
+            <button id="btn_stop">reload</button>
+            <div class="heartbeat">
+                <p>WS心跳</p>
+                <p id="heartbeat">-</p>
+            </div>
+        </div>
+        <div class="right">
+            <ul></ul>
+        </div>
+    </div>
+</body>
+<script src="./jq.js"></script>
+<script>
+
+    const wsUrl = 'ws://121.37.20.113:9091/wes'
+    // const wsUrl = 'ws://127.0.0.1:9091/wes'
+    const reloadUrl = 'http://121.37.20.113:9092/reload'
+
+    let flg = true
+    var socket = new WebSocket(wsUrl)
+    socket.addEventListener('open', function (event) {
+        console.log('socket is open')
+    })
+
+    socket.addEventListener('message', function (event) {
+
+        if (event.data.indexOf('heartbeat') != -1) {
+            $('#heartbeat').text(event.data.split('|')[1])
+            return
+        }
+        console.log(event.data)
+        setDom(event.data)
+    })
+    function setDom(data) {
+        $(` <li> ${data} </li>`).appendTo($('ul'))
+    }
+
+    $('#btn').on('click', function () {
+        if (!flg) {
+            alert('请刷新页面！')
+            return
+        }
+        socket.send('/up')
+    })
+    $('#btn_stop').on('click', function () {
+        // socket.send('/stop')
+        $.ajax({
+            url: reloadUrl,
+            success: res => {
+                if (res.code == 200) {
+                    location.reload()
+                } else {
+                    alert('报错了，看看控制台')
+                }
+            },
+            error: err => {
+                alert('报错了，看看控制台')
+                console.log(err)
+            }
+        })
+    })
+
+</script>
+
+</html>
