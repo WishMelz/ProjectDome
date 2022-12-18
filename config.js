@@ -1,19 +1,15 @@
 module.exports = {
     serve: {
-        mainPort: 9091,
-        reloadPort: 9092
+        port: 9093
     },
     github: {
-        url: "https://github.com/WishMelz/imgurl",  // 仓库地址
-        fileName: "imgurl", // 仓库文件夹
-        buildFolderName: 'dist'
+        url: "https://github.com/WishMelz/meapi.git",  // 仓库地址
+        fileName: "app.js", // 仓库文件夹
+        path:"/app/auto/",
     },
     shell: {
         gitUpdate: "git pull",  // git 拉取代码
         npmDow: "npm install",   // 下载依赖包
-        build: "pm2 start ",  // 打包指令
-    },
-    reload: {
-        shell: "pm2 reload 0"
+        start: "pm2 reload ",  // 打包指令
     }
 }

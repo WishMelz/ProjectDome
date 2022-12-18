@@ -75,8 +75,8 @@
 <body>
     <div class="main">
         <div class="left">
-            <!-- <button id="btn">bulid</button> -->
-            <button id="btn_stop">reload</button>
+            <button id="btn_reload">重启</button>
+            <button id="btn_reloads">重启并下载依赖包</button>
             <div class="heartbeat">
                 <p>WS心跳</p>
                 <p id="heartbeat">-</p>
@@ -90,10 +90,8 @@
 <script src="./jq.js"></script>
 <script>
 
-    const wsUrl = 'ws://121.37.20.113:9091/wes'
+    const wsUrl = 'ws://121.37.20.113:9093/wes'
     // const wsUrl = 'ws://127.0.0.1:9091/wes'
-    const reloadUrl = 'http://121.37.20.113:9092/reload'
-
     let flg = true
     var socket = new WebSocket(wsUrl)
     socket.addEventListener('open', function (event) {
@@ -113,31 +111,12 @@
         $(` <li> ${data} </li>`).appendTo($('ul'))
     }
 
-    $('#btn').on('click', function () {
-        // if (!flg) {
-        //     alert('请刷新页面！')
-        //     return
-        // }
-        socket.send('/up')
+    $('#btn_reload').on('click', function () {
+        socket.send('/reload')
     })
-    $('#btn_stop').on('click', function () {
-        // socket.send('/stop')
-        $.ajax({
-            url: reloadUrl,
-            success: res => {
-                if (res.code == 200) {
-                    location.reload()
-                } else {
-                    alert('报错了，看看控制台')
-                }
-            },
-            error: err => {
-                alert('报错了，看看控制台')
-                console.log(err)
-            }
-        })
+    $('#btn_reloads').on('click', function () {
+        socket.send('/reloads')
     })
-
 </script>
 
 </html>
