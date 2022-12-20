@@ -1,7 +1,7 @@
 import request from '../utils/request'
 import { BASE_URL, CONTENT_TYPE } from './config/index'
 
-const bucketName = 'henglink-order-work'
+const bucketName = 'xxx'
 const randomData = Math.ceil(Math.random() * 10)
 const userId = sessionStorage.getItem('userId')
 const date = new Date().getTime()
